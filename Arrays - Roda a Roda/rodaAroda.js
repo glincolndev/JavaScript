@@ -1,3 +1,7 @@
+
+//modularizar dividindo em funções com parametros
+
+
 function jogarRodaARoda() {
 //letras da palavra certa
 var palavraMisteriosa = ["a", "p", "o", "s", "t", "a"]; 
