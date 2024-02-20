@@ -31,18 +31,20 @@ console.log(funcionario1);
 
 class Paciente {
   nome: string;
-  cpf: number;
-  rg: number;
-  celular: number;
+  cpf: string;
+  rg: string;
+  celular: string;
+  email:string;
   endereco: string;
   idade:Date;
   sexo:string;
 
   constructor(
     nome: string,
-    cpf: number,
-    rg: number,
-    celular: number,
+    cpf: string,
+    rg: string,
+    celular: string,
+    email:string,
     endereco: string,
     idade:Date,
     sexo:string
@@ -51,12 +53,13 @@ class Paciente {
     this.cpf = cpf;
     this.rg = rg;
     this.celular = celular;
+    this.email = email;
     this.endereco = endereco;
     this.idade = idade;
     this.sexo = sexo;
   }
 }
-const paciente1 = new Paciente ("Carla",1235678900,123456789,84912345678,"Rua das Casas",new Date(1970,8,13),"Feminino")
+const paciente1 = new Paciente ("Carla","1235678900","123456789","84912345678","carla@email.com","Rua das Casas",new Date(1970,8,13),"Feminino")
 console.log(paciente1);
 
 class Consultas {

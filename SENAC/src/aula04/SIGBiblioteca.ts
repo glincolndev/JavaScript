@@ -29,6 +29,7 @@ class Usuario {
   cpf: string;
   rg: string;
   celular: string;
+  email:string;
   endereco: string;
 
   constructor(
@@ -36,6 +37,7 @@ class Usuario {
     cpf: string,
     rg: string,
     celular: string,
+    email:string,
     endereco: string,
     
 
@@ -44,12 +46,13 @@ class Usuario {
     this.cpf = cpf;
     this.rg = rg;
     this.celular = celular;
+    this.email = email;
     this.endereco = endereco;
     
   }
 }
 
-const usuario1 = new Usuario ("Patrícia","12345678900","123456789","(84)9 12345678","Rua dos campos")
+const usuario1 = new Usuario ("Patrícia","12345678900","123456789","(84)9 12345678","patricia@email.com","Rua dos campos")
 //console.log(usuario1);
 
 class Emprestimos {
