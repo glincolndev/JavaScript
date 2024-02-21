@@ -1,0 +1,122 @@
+class Funcionario {
+  nome: string;
+  cpf: number;
+  rg: number;
+  celular: number;
+  endereco: string;
+  cargo: string;
+  salario: number;
+  constructor(
+    nome: string,
+    cpf: number,
+    rg: number,
+    celular: number,
+    endereco: string,
+    cargo: string,
+    salario: number
+  ) {
+    this.nome = nome;
+    this.cpf = cpf;
+    this.rg = rg;
+    this.celular = celular;
+    this.endereco = endereco;
+    this.cargo = cargo;
+    this.salario = salario;
+  }
+}
+const funcionario1 = new Funcionario("Marcos S.",12345678900,123456789,84912345678,"Rua dos Bobos","Desenvolvedor Full-Stack",5000);
+const funcionario2 = new Funcionario("Sandra M.",12345678900,123456789,84912345678,"Rua das Casas","Desenvolvedor Full-Stack",5000);
+
+//console.log(funcionario1,funcionario2);
+
+class Equipe {
+    membro1: Funcionario;
+    membro2: Funcionario;
+    membro3?: Funcionario;
+    membro4?: Funcionario;
+    constructor(
+    membro1:Funcionario,
+    membro2:Funcionario,
+    membro3?:Funcionario,
+    membro4?:Funcionario
+    ){
+        this.membro1 = membro1;
+        this.membro2 = membro2;
+        this.membro3 = membro3;
+        this.membro4 = membro4;
+    }
+}
+
+const equipe1 = new Equipe (funcionario2,funcionario1);
+
+class Projeto{
+    nomeProjeto: string;
+    descricaoProjeto: string;
+    equipeResponsavel: Equipe;
+    prazoGeral: Date;
+
+    constructor(
+    nomeProjeto: string,
+    descricaoProjeto: string,
+    equipeResponsavel: Equipe,
+    prazoGeral: Date,
+    ){
+        this.nomeProjeto = nomeProjeto;
+        this.descricaoProjeto = descricaoProjeto;
+        this.equipeResponsavel= equipeResponsavel;
+        this.prazoGeral= prazoGeral;
+    }
+}
+
+const projeto1 = new Projeto ("App IOS","Desenvolver aplicativo IOS",equipe1,new Date (2024,4,16));
+//console.log(projeto1);
+
+class Tarefas {
+    projetoFonte: Projeto;
+    tarefaProjeto1: string;
+    responsavelTarefa1: string;
+    prazoTarefa1: Date;
+    tarefaProjeto2?: string;
+    prazoTarefa2?: Date;
+    tarefaProjeto3?: string;
+    prazoTarefa3?: Date;
+
+    constructor(
+    projetoFonte: Projeto,
+    tarefaProjeto1: string,
+    responsavelTarefa1: string,
+    prazoTarefa1: Date,
+    tarefaProjeto2?: string,
+    prazoTarefa2?: Date,
+    tarefaProjeto3?: string,
+    prazoTarefa3?: Date
+    ){
+        this.projetoFonte= projetoFonte;
+        this.tarefaProjeto1= tarefaProjeto1;
+        this.responsavelTarefa1= responsavelTarefa1;
+        this.prazoTarefa1= prazoTarefa1;
+        this.tarefaProjeto2 = tarefaProjeto2;
+        this.prazoTarefa2 = prazoTarefa2;
+        this.tarefaProjeto3 = tarefaProjeto3;
+        this.prazoTarefa3 = prazoTarefa3;
+        
+    }
+}
+
+const tarefa1 = new Tarefas (projeto1,"Desenvolver UI",(equipe1.membro1.nome),new Date (2024,5,10))
+console.log(tarefa1);
+
+/* 
+
+Hoje(20) foi a colação de grau de minha melhor amiga, na UF, e tive de ir de onibus às 15h:30,
+Por ser rede Pública (UFRN - Visitantes), não consegui entrar no Teams, nem GitHub, ficando sem internet total às 19h
+até às 22:40, hora que cheguei em casa para terminar a atividade. Ainda assim, feita com esmero.
+
+Partes que faltaram: 
++ Acompanhamento do status de cada tarefa e notificação de prazos vencidos.
+ Comunicação Interna:
++ Facilidade para comunicação entre os membros da equipe de cada projeto, através de
+mensagens e compartilhamento de arquivos.
++ Registro de discussões e decisões importantes relacionadas aos projetos.
+
+*/
