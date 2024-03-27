@@ -1,0 +1,16 @@
+h1{
+    text-align: center;
+}
+body{
+    text-align: center;
+    background : var(--blue);
+    font-family: 'Open sans', sans-serif;
+}
+
+:root{
+    --green: #00FF00;
+    --white:#FFFFFF;
+    --black: #000000;
+    --blue: #89CFF0;
+}
+
