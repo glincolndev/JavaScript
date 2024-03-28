@@ -8,9 +8,27 @@
   </head>
   <style></style>
   <body>
-    <input type="string" placeholder="Digite aqui" id="letra" maxlength="1" />
-    <button onclick="checar()">confirmar resposta</button>
-    <button onclick="input()">enviar letra</button>
+    <p>
+    Bem vinda, pessoa!
+    Para jogar, aperte <strong>F12</strong> ou 
+    procure pelo console nas <strong>ferramentas de desenvolvedor</strong> do seu navegador.
+    </p>
+    <p>
+      Instruções:
+      Clique no campo "Digite uma letra" e insira a letra desejada.
+      <p>
+      Clique em "Registrar palpite"
+      </p>
+      <p>
+      Em seguida, clique em "Confirmar" para começar!
+      </p>
+      <p>
+      <strong>Atenção!</strong>
+      A letra deve <strong>sempre ser maiúscula</strong>
+    </p>
+    <input type="string" placeholder="Digite uma letra" id="letra" maxlength="1" />
+    <button onclick="input()">Registrar palpite</button>
+    <button onclick="checar()">Confirmar</button>
     <script src="rdr.js"></script>
   </body>
 </html>
