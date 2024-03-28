@@ -14,30 +14,31 @@ Futuramente, instruções serão mostradas no HTML ao abrir a página.
 /*
 Primeiro, a função sortear() irá usar a biblioteca Math para
 retirar um índice aleatório do banco de palavras (inicializado como "gabarito")
+e teremos a palavra misteriosa junto de sua dica, que será exibida.
 */
 function sortear() {
   var gabarito = [
-    ["G", "A", "T", "O"],
-    ["C", "A", "S", "A"],
-    ["C", "A", "M", "A"],
-    ["V", "E", "R", "M", "E", "L", "H", "O"],
-    ["M", "A", "Ç", "A"],
-    ["S", "O", "L"],
-    ["C", "A", "B", "O"],
-    ["P", "A", "R", "A"],
-    ["B", "O", "L", "A"],
-    ["F", "O", "G", "O"],
+    [["G", "A", "T", "O"],["Felino"]],
+    [["C", "A", "S", "A"],["Moradia"]],
+    [["C", "A", "M", "A"]["Dormir"]],
+    [["V", "E", "R", "M", "E", "L", "H", "O"],["Cor"]],
+    [["M", "A", "Ç", "Ã"],["Fruto proibido"]],
+    [["S", "O", "L"],["Astro rei"]],
+    [["C", "A", "B", "O"],["Patente militar"]],
+    [["P", "A", "R", "Á"],["Estrela solitária da bandeira nacional"]],
+    [["B", "O", "L", "A"],["...de futebol, de volei, de basquete"]],
+    [["F", "O", "G", "O"],["Lareira"]],
   ];
 
   var resultSort = gabarito[Math.floor(Math.random() * gabarito.length)];
-  console.log(resultSort)
+  console.log(`A dica é: ${resultSort[1].toString()}`);
   return resultSort;
 }
 
 // Vetor onde serão armazenados os inputs
-
 var tentativa = [];
 
+// Função que receberá o input e enviará ao vetor tentativa[]
 function input() {
   var letra = document.getElementById("letra").value;
   letra.toUpperCase(letra);
@@ -49,6 +50,8 @@ function input() {
 
 var letra = input();
 var resultSort = sortear();
+
+
 /*
 Este vetor servirá para implentação futura de um
 evento de erro, para maior engajamento do usuário 
@@ -63,11 +66,12 @@ da palavra gabarito e vai atuar como a nossa versão
 censurada dela, que irá se revelando conforme
 tentativas bem sucedidas
 */
+
+
 var acertos = [];
-for (a in resultSort) {
+for (a in resultSort[0]) {
   acertos.push("_");
 }
-
 
 
 /* 
@@ -78,10 +82,12 @@ verificando a cada letra nova que o usuário envia
 se é correspondente ou não, para daí atualizar o vetor acertos[]
 ou erros[].
 */
+
+
 function checar() {
   for (b in tentativa) {
-    for (a in resultSort) {
-      if (tentativa[b] == resultSort[a]) {
+    for (a in resultSort[0]) {
+      if (tentativa[b] == resultSort[0][a]) {
         acertos.splice(a, 1, tentativa[b]);
         console.log("Acertou!");
       }
@@ -90,3 +96,4 @@ function checar() {
   console.log(`Acertos: ${acertos}`);
   //console.log(`Erros: ${erros}`);
 }
+
